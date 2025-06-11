@@ -9,17 +9,8 @@ Ensure the following are installed on your system before proceeding:
 # Getting Started
 Follow these steps to set up and run the project locally.
 ## 1. Clone the Repository
-
-You can use either HTTPS or SSH:
-
-**For HTTPS:**
 ```bash
 git clone https://github.com/jaaaaayy/short-story-submission-app.git
-```
-
-**For SSH:**
-```bash
-git clone git@github.com:jaaaaayy/short-story-submission-app.git
 ```
 
 Then move into the project directory:
