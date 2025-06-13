@@ -1,5 +1,5 @@
 <header class="h-14 lg:h-16 p-4 lg:px-6 border-b border-gray-200 flex items-center justify-between">
-  <div class="text-2xl font-bold text-orange-500">Talevy</div>
+  <a href="/" class="text-2xl font-bold text-orange-500">Talevy</a>
   <nav>
     <ul class="flex items-center gap-4">
       <li>
