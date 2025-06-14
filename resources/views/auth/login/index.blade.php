@@ -4,8 +4,6 @@
 
 @section('content')
 
-  <x-header />
-
   <div class="p-4 lg:p-6 grow flex items-center justify-center">
     <form action="" class="grid gap-4 border border-gray-200 rounded-sm p-6 w-[400px]">
       <h1 class="text-xl font-semibold text-center">Welcome back!</h1>

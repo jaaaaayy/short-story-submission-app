@@ -11,6 +11,8 @@
 
 <body>
   <div class="max-w-[1440px] mx-auto flex flex-col h-svh">
+    <x-header />
+
     @yield('content')
   </div>
 </body>
