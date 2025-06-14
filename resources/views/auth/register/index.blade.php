@@ -29,6 +29,13 @@
           placeholder="Enter your password">
       </div>
 
+      <div class="grid gap-2">
+        <label for="" class="font-medium">Confirm Password</label>
+        <input type="password" name="password_confirmation"
+          class="h-10 border border-gray-200 p-2 px-3 rounded-sm focus:outline-none focus:border-orange-500 focus:ring-orange-500/50 focus:ring-[3px]"
+          placeholder="Confirm your password">
+      </div>
+
       <button
         class="bg-orange-500 hover:bg-orange-600 transition-colors p-2 px-3 rounded-sm text-white font-medium shadow-sm">Register</button>
 
