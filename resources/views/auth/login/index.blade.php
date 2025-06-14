@@ -9,17 +9,17 @@
       <h1 class="text-xl font-semibold text-center">Welcome back!</h1>
 
       <div class="grid gap-2">
-        <label for="" class="font-medium">Username</label>
-        <input type="text"
+        <label for="username" class="font-medium">Username</label>
+        <input type="text" id="username"
           class="h-10 border border-gray-200 p-2 px-3 rounded-sm focus:outline-none focus:border-orange-500 focus:ring-orange-500/50 focus:ring-[3px]"
-          placeholder="Username">
+          placeholder="Enter your username">
       </div>
 
       <div class="grid gap-2">
-        <label for="" class="font-medium">Password</label>
-        <input type="password"
+        <label for="password" class="font-medium">Password</label>
+        <input type="password" id="password"
           class="h-10 border border-gray-200 p-2 px-3 rounded-sm focus:outline-none focus:border-orange-500 focus:ring-orange-500/50 focus:ring-[3px]"
-          placeholder="Password">
+          placeholder="Enter your password">
       </div>
 
       <button
