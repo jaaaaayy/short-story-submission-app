@@ -4,8 +4,6 @@
 
 @section('content')
 
-  <x-header />
-
   <div class="p-4 md:px-12 lg:p-6 lg:px-18 grow">
     <div class="grid md:grid-cols-2 gap-4 h-full">
       <section class="flex flex-col items-start justify-center">
