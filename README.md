@@ -1,4 +1,5 @@
 # Short Story Submission App
+This project was inspired by Wattpad. The design and features were implemented from scratch for educational purposes.
 
 # Project Prerequisites
 Ensure the following are installed on your system before proceeding:
