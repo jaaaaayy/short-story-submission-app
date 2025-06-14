@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'Short Story Submission App')
+@section('title', 'Short Story Submission App | ' . config('app.name'))
 
 @section('content')
 
