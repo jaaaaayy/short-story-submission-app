@@ -12,21 +12,21 @@
         <label for="" class="font-medium">Username</label>
         <input type="text"
           class="h-10 border border-gray-200 p-2 px-3 rounded-sm focus:outline-none focus:border-orange-500 focus:ring-orange-500/50 focus:ring-[3px]"
-          placeholder="Username">
+          placeholder="Enter your username">
       </div>
 
       <div class="grid gap-2">
         <label for="" class="font-medium">Email</label>
         <input type="text"
           class="h-10 border border-gray-200 p-2 px-3 rounded-sm focus:outline-none focus:border-orange-500 focus:ring-orange-500/50 focus:ring-[3px]"
-          placeholder="Email">
+          placeholder="Enter your email">
       </div>
 
       <div class="grid gap-2">
         <label for="" class="font-medium">Password</label>
         <input type="password"
           class="h-10 border border-gray-200 p-2 px-3 rounded-sm focus:outline-none focus:border-orange-500 focus:ring-orange-500/50 focus:ring-[3px]"
-          placeholder="Password">
+          placeholder="Enter your password">
       </div>
 
       <button
