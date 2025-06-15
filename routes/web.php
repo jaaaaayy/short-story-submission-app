@@ -8,5 +8,6 @@ Route::get('/', [LandingController::class, 'index'])->name('landing.index');
 
 Route::controller(AuthController::class)->group(function () {
   Route::get('/login', 'index')->name('auth.index');
+  Route::post('/login', 'login')->name('auth.login');
   Route::get('/register', 'create')->name('auth.create');
 });
