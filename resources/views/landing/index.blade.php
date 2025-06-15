@@ -13,12 +13,12 @@
           others, and fuel your creativity in a space where every word matters.
         </p>
         <div class="flex items-center gap-4 mt-6">
-          <button
-            class="bg-orange-500 hover:bg-orange-600 transition-colors text-white p-2 px-4 rounded-sm shadow-sm font-medium">Start
-            Reading</button>
-          <button
-            class="bg-orange-500 hover:bg-orange-600 transition-colors text-white p-2 px-4 rounded-sm shadow-sm font-medium">Start
-            Writing</button>
+          <a href="{{ route('stories.index') }}"
+            class="bg-orange-500 hover:bg-orange-600 transition-colors text-white p-2 px-4 rounded-xs shadow-sm font-medium">Start
+            Reading</a>
+          <a href="{{ route('stories.create') }}"
+            class="bg-orange-500 hover:bg-orange-600 transition-colors text-white p-2 px-4 rounded-xs shadow-sm font-medium">Start
+            Writing</a>
         </div>
       </section>
       <section class="flex items-center justify-center">Short story list image from the app is shown here</section>

@@ -49,7 +49,7 @@
       </div>
 
       <button
-        class="bg-orange-500 hover:bg-orange-600 transition-colors p-2 px-3 rounded-xs text-white font-medium shadow-sm">Register</button>
+        class="h-10 bg-orange-500 hover:bg-orange-600 transition-colors p-2 px-3 rounded-xs text-white font-medium shadow-sm">Register</button>
 
       <p class="text-center">Already have an account? <a href="{{ route('auth.index') }}"
           class="underline underline-offset-4">Login</a></p>
