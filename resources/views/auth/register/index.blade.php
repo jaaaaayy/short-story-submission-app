@@ -6,6 +6,12 @@
 
   <div class="p-4 lg:p-6 grow flex items-center justify-center">
     <form action="" class="grid gap-4 border border-gray-200 rounded-sm p-6 w-[400px]">
+      @if (session('error'))
+        <div class="flex items-center bg-red-500 text-white font-medium px-4 py-3 rounded-sm">
+          <p>{{ session('error') }}</p>
+        </div>
+      @endif
+
       <h1 class="text-xl font-semibold text-center">Create an account.</h1>
 
       <div class="grid gap-2">
