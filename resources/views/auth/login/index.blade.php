@@ -28,7 +28,7 @@
       <button
         class="bg-orange-500 hover:bg-orange-600 transition-colors p-2 px-3 rounded-sm text-white font-medium shadow-sm">Login</button>
 
-      <p class="text-center">Don&apos;t have an account? <a href="/register"
+      <p class="text-center">Don&apos;t have an account? <a href="{{ route('auth.create') }}"
           class="underline underline-offset-4">Register</a></p>
     </form>
   </div>
