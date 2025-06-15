@@ -46,8 +46,8 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $validated = $request->validate([
-            'username' => 'required|string|min:3|max:8',
-            'email' => 'required|email',
+            'username' => 'required|string|min:3|max:8|unique:users',
+            'email' => 'required|email|unique:users',
             'password' => 'required|string|min:8|confirmed'
         ]);
 
@@ -58,7 +58,7 @@ class AuthController extends Controller
                 'password' => Hash::make($validated['password']),
             ]);
 
-            return redirect()->route('auth.index')->with('success', 'Registered in successfully.');
+            return redirect()->route('auth.index')->with('success', 'Registered successfully.');
         } catch (Throwable $caught) {
             return redirect()->route('auth.create')->with('error', 'Failed to register. Please try again.');
         }
