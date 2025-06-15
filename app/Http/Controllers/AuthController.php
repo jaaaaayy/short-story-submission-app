@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Throwable;
 
 class AuthController extends Controller
 {
@@ -22,19 +23,44 @@ class AuthController extends Controller
             'remember' => 'boolean',
         ]);
 
-        $user = User::where('username', $validated['username'])->first();
+        try {
+            $user = User::where('username', $validated['username'])->first();
 
-        if (!$user || !Hash::check($validated['password'], $user->password)) {
-            return back()->with('error', 'Incorrect username or password.');
+            if (!$user || !Hash::check($validated['password'], $user->password)) {
+                return back()->with('error', 'Incorrect username or password.');
+            }
+
+            Auth::login($user, $validated['remember'] ?? false);
+
+            return redirect()->route('stories.index')->with('success', 'Logged in successfully.');
+        } catch (Throwable $caught) {
+            return redirect()->route('auth.index')->with('error', 'Failed to login. Please try again.');
         }
-
-        Auth::login($user, $validated['remember'] ?? false);
-
-        return redirect()->route('stories.index')->with('success', 'Logged in successfully.');
     }
 
     public function create()
     {
         return view('auth.register.index');
+    }
+
+    public function register(Request $request)
+    {
+        $validated = $request->validate([
+            'username' => 'required|string|min:3|max:8|unique:users',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|string|min:8|confirmed'
+        ]);
+
+        try {
+            User::create([
+                'username' => $validated['username'],
+                'email' => $validated['email'],
+                'password' => Hash::make($validated['password']),
+            ]);
+
+            return redirect()->route('auth.index')->with('success', 'Registered successfully.');
+        } catch (Throwable $caught) {
+            return redirect()->route('auth.create')->with('error', 'Failed to register. Please try again.');
+        }
     }
 }
