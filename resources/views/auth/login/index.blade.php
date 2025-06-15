@@ -5,19 +5,22 @@
 @section('content')
 
   <div class="p-4 lg:p-6 grow flex items-center justify-center">
-    <form action="" class="grid gap-4 border border-gray-200 rounded-sm p-6 w-[400px]">
+    <form action="{{ route('auth.login') }}" method="POST"
+      class="grid gap-4 border border-gray-200 rounded-sm p-6 w-[400px]">
+      @csrf
+
       <h1 class="text-xl font-semibold text-center">Welcome back!</h1>
 
       <div class="grid gap-2">
         <label for="username" class="font-medium">Username</label>
-        <input type="text" id="username"
+        <input type="text" id="username" name="username"
           class="h-10 border border-gray-200 p-2 px-3 rounded-sm focus:outline-none focus:border-orange-500 focus:ring-orange-500/50 focus:ring-[3px]"
-          placeholder="Enter your username">
+          placeholder="Enter your username" autocomplete="off">
       </div>
 
       <div class="grid gap-2">
         <label for="password" class="font-medium">Password</label>
-        <input type="password" id="password"
+        <input type="password" id="password" name="password"
           class="h-10 border border-gray-200 p-2 px-3 rounded-sm focus:outline-none focus:border-orange-500 focus:ring-orange-500/50 focus:ring-[3px]"
           placeholder="Enter your password">
       </div>
