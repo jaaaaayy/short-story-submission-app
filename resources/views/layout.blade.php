@@ -13,6 +13,12 @@
   <div class="max-w-[1440px] mx-auto flex flex-col h-svh">
     <x-header />
 
+    @if (session('error'))
+      <x-alert type="error" :message="session('error')" />
+    @elseif (session('success'))
+      <x-alert type="success" :message="session('success')" />
+    @endif
+
     @yield('content')
 
     <x-footer />
