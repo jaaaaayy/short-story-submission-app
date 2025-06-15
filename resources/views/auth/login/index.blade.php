@@ -10,9 +10,9 @@
       @csrf
 
       @if (session('error'))
-        <div class="flex items-center bg-red-500 text-white font-medium px-4 py-3 rounded-sm">
-          <p>{{ session('error') }}</p>
-        </div>
+        <x-alert type="error" :message="session('error')" />
+      @elseif (session('success'))
+        <x-alert type="success" :message="session('success')" />
       @endif
 
       <h1 class="text-xl font-semibold text-center">Welcome back!</h1>

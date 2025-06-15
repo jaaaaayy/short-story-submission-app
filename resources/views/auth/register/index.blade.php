@@ -9,6 +9,12 @@
       class="grid gap-4 border border-gray-200 rounded-sm p-6 w-[400px]">
       @csrf
 
+      @if (session('error'))
+        <x-alert type="error" :message="session('error')" />
+      @elseif (session('success'))
+        <x-alert type="success" :message="session('success')" />
+      @endif
+
       <h1 class="text-xl font-semibold text-center">Create an account.</h1>
 
       <div class="grid gap-2">
