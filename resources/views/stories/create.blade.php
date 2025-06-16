@@ -5,16 +5,27 @@
 @section('content')
 
   <div class="p-4 lg:p-6 grow flex items-center justify-center">
-    <form action="" method="POST" class="grid gap-4 border border-gray-200 rounded-xs p-6 w-[1200px]">
+    <form action="{{ route('stories.store') }}" method="POST" enctype="multipart/form-data"
+      class="grid gap-4 border border-gray-200 rounded-xs p-6 w-[1200px]">
       @csrf
 
       <h1 class="text-xl font-semibold text-center">Write a story.</h1>
 
       <div class="grid grid-cols-3 gap-4">
-        <div>
-          <div class="w-64 aspect-[1/1.5] border border-gray-200">
-            <img src="/path/to/cover.jpg" alt="Story Cover" class="w-full h-full object-cover" />
+        <div class="flex flex-col gap-2">
+          <label for="cover_image" class="font-medium">Cover Image</label>
+          <input type="file" id="cover_image" name="cover_image" accept="image/*" class="hidden"
+            onChange="previewCoverImage(event)" />
+          <div class="w-64 aspect-[1/1.5] border border-gray-200 cursor-pointer rounded-xs overflow-hidden relative"
+            onclick="document.getElementById('cover_image').click()">
+            <img id="preview" class="w-full h-full object-cover hidden" />
+            <div id="upload-placeholder" class="absolute inset-0 flex items-center justify-center text-neutral-500">
+              <span>Upload cover image</span>
+            </div>
           </div>
+          @error('cover_image')
+            <p class="text-red-500">{{ $message }}</p>
+          @enderror
         </div>
         <div class="col-span-2 space-y-4">
           <div class="grid gap-2">
@@ -23,7 +34,7 @@
               class="h-10 border border-gray-200 p-2 px-3 rounded-xs focus:outline-none focus:border-orange-500 focus:ring-orange-500/50 focus:ring-[3px]"
               placeholder="Enter the title" autocomplete="off">
             @error('title')
-              <p class="text-red-600">{{ $message }}</p>
+              <p class="text-red-500">{{ $message }}</p>
             @enderror
           </div>
 
@@ -33,21 +44,25 @@
               class="border border-gray-200 p-2 px-3 rounded-xs focus:outline-none focus:border-orange-500 focus:ring-orange-500/50 focus:ring-[3px]"
               placeholder="Enter the content" autocomplete="off"></textarea>
             @error('content')
-              <p class="text-red-600">{{ $message }}</p>
+              <p class="text-red-500">{{ $message }}</p>
             @enderror
           </div>
 
           <div class="grid gap-2">
             <label for="genre" class="font-medium">Genre</label>
-            <select name="genre" id="genre"
+            <select name="genre_id" id="genre"
               class="h-10 border border-gray-200 p-2 px-3 rounded-xs focus:outline-none focus:border-orange-500 focus:ring-orange-500/50 focus:ring-[3px]"
               required>
+              <option value="" disabled selected>Select a genre</option>
               @foreach ($genres as $genre)
-                <option value="{{ $genre->id }}" {{ old('genre') == $genre->id ? 'selected' : '' }}>
+                <option value="{{ $genre->id }}" {{ old('genre_id') == $genre->id ? 'selected' : '' }}>
                   {{ $genre->name }}
                 </option>
               @endforeach
             </select>
+            @error('genre_id')
+              <p class="text-red-500">{{ $message }}</p>
+            @enderror
           </div>
 
           <div class="flex gap-2">

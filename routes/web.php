@@ -17,4 +17,5 @@ Route::controller(AuthController::class)->group(function () {
 Route::controller(StoryController::class)->group(function () {
   Route::get('/stories', 'index')->name('stories.index');
   Route::get('/stories/write', 'create')->name('stories.create');
+  Route::post('/stories', 'store')->name('stories.store');
 });
