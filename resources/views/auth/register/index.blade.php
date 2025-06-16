@@ -17,7 +17,7 @@
           class="h-10 border border-gray-200 p-2 px-3 rounded-xs focus:outline-none focus:border-orange-500 focus:ring-orange-500/50 focus:ring-[3px]"
           placeholder="Enter your username" autocomplete="off">
         @error('username')
-          <p class="text-red-600">{{ $message }}</p>
+          <p class="text-red-500">{{ $message }}</p>
         @enderror
       </div>
 
@@ -27,7 +27,7 @@
           class="h-10 border border-gray-200 p-2 px-3 rounded-xs focus:outline-none focus:border-orange-500 focus:ring-orange-500/50 focus:ring-[3px]"
           placeholder="Enter your email" autocomplete="off">
         @error('email')
-          <p class="text-red-600">{{ $message }}</p>
+          <p class="text-red-500">{{ $message }}</p>
         @enderror
       </div>
 
@@ -37,7 +37,7 @@
           class="h-10 border border-gray-200 p-2 px-3 rounded-xs focus:outline-none focus:border-orange-500 focus:ring-orange-500/50 focus:ring-[3px]"
           placeholder="Enter your password">
         @error('password')
-          <p class="text-red-600">{{ $message }}</p>
+          <p class="text-red-500">{{ $message }}</p>
         @enderror
       </div>
 
