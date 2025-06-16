@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('content');
-            $table->string('genre');
+            $table->foreignId('genre_id')->constrained()->onDelete('cascade');
+            $table->string('cover_image');
             $table->timestamps();
         });
     }
