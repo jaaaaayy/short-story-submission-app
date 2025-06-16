@@ -40,8 +40,13 @@
           <div class="grid gap-2">
             <label for="genre" class="font-medium">Genre</label>
             <select name="genre" id="genre"
-              class="h-10 border border-gray-200 p-2 px-3 rounded-xs focus:outline-none focus:border-orange-500 focus:ring-orange-500/50 focus:ring-[3px]">
-              <option value="">Test</option>
+              class="h-10 border border-gray-200 p-2 px-3 rounded-xs focus:outline-none focus:border-orange-500 focus:ring-orange-500/50 focus:ring-[3px]"
+              required>
+              @foreach ($genres as $genre)
+                <option value="{{ $genre->id }}" {{ old('genre') == $genre->id ? 'selected' : '' }}>
+                  {{ $genre->name }}
+                </option>
+              @endforeach
             </select>
           </div>
 
