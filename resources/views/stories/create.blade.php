@@ -51,8 +51,7 @@
           <div class="grid gap-2">
             <label for="genre" class="font-medium">Genre</label>
             <select name="genre_id" id="genre"
-              class="h-10 border border-gray-200 p-2 px-3 rounded-xs focus:outline-none focus:border-orange-500 focus:ring-orange-500/50 focus:ring-[3px]"
-              required>
+              class="h-10 border border-gray-200 p-2 px-3 rounded-xs focus:outline-none focus:border-orange-500 focus:ring-orange-500/50 focus:ring-[3px]">
               <option value="" disabled selected>Select a genre</option>
               @foreach ($genres as $genre)
                 <option value="{{ $genre->id }}" {{ old('genre_id') == $genre->id ? 'selected' : '' }}>
@@ -66,8 +65,8 @@
           </div>
 
           <div class="flex gap-2">
-            <button
-              class="h-10 bg-gray-500 hover:bg-gray-600 transition-colors p-2 px-3 rounded-xs text-white font-medium shadow-sm">Cancel</button>
+            <a href="{{ route('stories.index') }}"
+              class="h-10 bg-gray-500 hover:bg-gray-600 transition-colors p-2 px-3 rounded-xs text-white font-medium shadow-sm">Cancel</a>
 
             <button
               class="h-10 bg-orange-500 hover:bg-orange-600 transition-colors p-2 px-3 rounded-xs text-white font-medium shadow-sm">Publish</button>
