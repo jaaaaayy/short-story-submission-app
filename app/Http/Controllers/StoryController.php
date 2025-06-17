@@ -42,7 +42,7 @@ class StoryController extends Controller
                 'content' => $validated['content'],
                 'genre_id' => $validated['genre_id'],
                 'cover_image' => $validated['cover_image'],
-                'user_id' => Auth::id()
+                'author_id' => Auth::id()
             ]);
 
             return redirect()->route('stories.index')->with('success', 'Story submitted successfully.');
