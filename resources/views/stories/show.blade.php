@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section(' | ' . config('app.name'))
+@section('title', $story->title . ' | ' . config('app.name'))
 
 @section('content')
 

@@ -10,7 +10,7 @@
       @foreach ($stories as $story)
         <a key={{ $story->id }} href="{{ route('stories.show', $story->id) }}"
           class="rounded-xs overflow-hidden aspect-[16/25]">
-          <img src="{{ Storage::url($story->cover_image) }}" class="w-full h-full object-cover" />
+          <img src="{{ Storage::url($story->cover_image) }}" alt="{{ $story->title }}" class="w-full h-full object-cover" />
         </a>
       @endforeach
     </div>

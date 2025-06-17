@@ -21,7 +21,9 @@
             Writing</a>
         </div>
       </section>
-      <section class="flex items-center justify-center">Short story list image from the app is shown here</section>
+      <section class="flex items-center justify-center">
+        <img src="{{ Storage::url('landing/Story List.png') }}" alt="Story List">
+      </section>
     </div>
   </div>
 
