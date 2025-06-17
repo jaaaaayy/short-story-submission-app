@@ -4,17 +4,29 @@
   <nav>
     <ul class="flex items-center gap-4">
       <li>
-        <a href={{ route('auth.index') }} @class([
-            'font-medium',
-            'text-orange-500' => request()->routeIs('auth.index'),
-        ])>Login</a>
+        <a href={{ auth()->check() ? route('stories.create') : route('auth.index') }}
+          @class([
+              'font-medium',
+              'text-orange-500' => request()->routeIs('stories.create'),
+          ])>Write</a>
       </li>
-      <li>
-        <a href={{ route('auth.create') }} @class([
-            'font-medium',
-            'text-orange-500' => request()->routeIs('auth.create'),
-        ])>Register</a>
-      </li>
+      @guest
+        <li>
+          <a href={{ route('auth.index') }} @class([
+              'font-medium',
+              'text-orange-500' => request()->routeIs('auth.index'),
+          ])>Login</a>
+        </li>
+        <li>
+          <a href={{ route('auth.create') }} @class([
+              'font-medium',
+              'text-orange-500' => request()->routeIs('auth.create'),
+          ])>Register</a>
+        </li>
+      @endguest
+      @auth
+        <button class="font-medium">Logout</button>
+      @endauth
     </ul>
   </nav>
 </header>
