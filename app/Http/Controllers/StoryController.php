@@ -11,7 +11,7 @@ class StoryController extends Controller
 {
     public function index()
     {
-        $stories = Story::select('id', 'cover_image')->get();
+        $stories = Story::select('id', 'cover_image')->latest()->get();
 
         return view('stories.index', ['stories' => $stories]);
     }
@@ -42,5 +42,12 @@ class StoryController extends Controller
         } catch (Throwable $caught) {
             return redirect()->route('stories.create')->with('error', 'Failed to submit the story. Please try again.');
         }
+    }
+
+    public function show(String $id)
+    {
+        $story = Story::where('id', $id)->first();
+
+        return view('stories.show', ['story' => $story]);
     }
 }

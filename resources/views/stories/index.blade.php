@@ -8,9 +8,10 @@
     <h1 class="text-xl font-semibold">Story List</h1>
     <div class="grid grid-cols-8 gap-4">
       @foreach ($stories as $story)
-        <div key={{ $story->id }} class="rounded-xs overflow-hidden aspect-[16/25]">
+        <a key={{ $story->id }} href="{{ route('stories.show', $story->id) }}"
+          class="rounded-xs overflow-hidden aspect-[16/25]">
           <img src="{{ Storage::url($story->cover_image) }}" class="w-full h-full object-cover" />
-        </div>
+        </a>
       @endforeach
     </div>
   </div>
