@@ -13,8 +13,14 @@ class Story extends Model
         'title',
         'content',
         'genre_id',
-        'cover_image'
+        'cover_image',
+        'user_id'
     ];
+
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
 
     public function genre()
     {

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Genre;
 use App\Models\Story;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Throwable;
 
 class StoryController extends Controller
@@ -36,7 +37,13 @@ class StoryController extends Controller
             $imagePath = $request->file('cover_image')->store('stories', 'public');
             $validated['cover_image'] = $imagePath;
 
-            Story::create($validated);
+            Story::create([
+                'title' => $validated['title'],
+                'content' => $validated['content'],
+                'genre_id' => $validated['genre_id'],
+                'cover_image' => $validated['cover_image'],
+                'user_id' => Auth::id()
+            ]);
 
             return redirect()->route('stories.index')->with('success', 'Story submitted successfully.');
         } catch (Throwable $caught) {
