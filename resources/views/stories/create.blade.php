@@ -40,9 +40,9 @@
 
           <div class="grid gap-2">
             <label for="content" class="font-medium">Content</label>
-            <textarea rows="20" id="content" name="content" value="{{ old('content') }}"
+            <textarea rows="20" id="content" name="content"
               class="border border-gray-200 p-2 px-3 rounded-xs focus:outline-none focus:border-orange-500 focus:ring-orange-500/50 focus:ring-[3px]"
-              placeholder="Enter the content" autocomplete="off"></textarea>
+              placeholder="Enter the content" autocomplete="off">{{ old('content') }}</textarea>
             @error('content')
               <p class="text-red-500">{{ $message }}</p>
             @enderror

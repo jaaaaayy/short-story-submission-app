@@ -40,7 +40,7 @@ class AuthController extends Controller
 
     public function create()
     {
-        return view('auth.register.index');
+        return view('auth.register.create');
     }
 
     public function register(Request $request)
