@@ -26,7 +26,7 @@
         </li>
       @endguest
       @auth
-        <button class="font-medium">Logout</button>
+        <a href="{{ route('auth.logout') }}" class="font-medium">Logout</a>
       @endauth
     </ul>
   </nav>
