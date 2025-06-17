@@ -18,4 +18,5 @@ Route::controller(StoryController::class)->group(function () {
   Route::get('/stories', 'index')->name('stories.index');
   Route::get('/stories/write', 'create')->name('stories.create');
   Route::post('/stories', 'store')->name('stories.store');
+  Route::get('/stories/{id}', 'show')->name('stories.show');
 });
