@@ -9,11 +9,17 @@ use Throwable;
 
 class StoryController extends Controller
 {
-    public function index() {}
+    public function index()
+    {
+        $stories = Story::select('id', 'cover_image')->get();
+
+        return view('stories.index', ['stories' => $stories]);
+    }
 
     public function create()
     {
         $genres = Genre::all();
+
         return view('stories.create', ['genres' => $genres]);
     }
 
