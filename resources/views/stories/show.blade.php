@@ -10,7 +10,7 @@
         <h1 class="text-xl font-semibold">{{ $story->title }}</h1>
         <span>{{ $story->genre->name }}</span>
       </div>
-      <p>{{ $story->content }}</p>
+      <p>{!! nl2br(e($story->content)) !!}</p>
     </div>
   </div>
 
