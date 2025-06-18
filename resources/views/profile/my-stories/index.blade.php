@@ -12,7 +12,7 @@
       <h1 class="text-xl font-semibold">My Story List</h1>
       <div class="grid grid-cols-4 md:grid-cols-8 gap-2">
         @foreach ($stories as $story)
-          <a key={{ $story->id }} href="{{ route('stories.show', $story->id) }}"
+          <a key={{ $story->id }} href="{{ route('profile.my-stories.edit', $story->id) }}"
             class="rounded-xs overflow-hidden aspect-[16/25]">
             <img src="{{ Storage::url($story->cover_image) }}" alt="{{ $story->title }}"
               class="w-full h-full object-cover" />
