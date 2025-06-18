@@ -17,13 +17,13 @@ class Story extends Model
         'author_id'
     ];
 
-    public function author()
-    {
-        return $this->belongsTo(User::class, 'author_id');
-    }
-
     public function genre()
     {
         return $this->belongsTo(Genre::class);
+    }
+
+    public function author()
+    {
+        return $this->belongsTo(User::class, 'author_id');
     }
 }
