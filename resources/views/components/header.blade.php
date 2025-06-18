@@ -5,11 +5,10 @@
   <nav>
     <ul class="flex items-center gap-4">
       <li>
-        <a href={{ auth()->check() ? route('stories.create') : route('auth.index') }}
-          @class([
-              'font-medium',
-              'text-orange-500' => request()->routeIs('stories.create'),
-          ])>Write</a>
+        <a href={{ route('stories.create') }} @class([
+            'font-medium',
+            'text-orange-500' => request()->routeIs('stories.create'),
+        ])>Write</a>
       </li>
       @guest
         <li>
