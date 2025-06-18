@@ -4,7 +4,7 @@
 
 @section('content')
 
-  <div class="p-4 lg:p-6 grow flex justify-center">
+  <div class="p-4 lg:p-6 flex justify-center">
     <form action="{{ route('stories.store') }}" method="POST" enctype="multipart/form-data"
       class="grid gap-4 border border-gray-200 rounded-xs p-4 lg:p-6 w-[1200px]">
       @csrf

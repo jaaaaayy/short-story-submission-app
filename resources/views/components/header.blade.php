@@ -4,12 +4,6 @@
     class="text-2xl font-bold text-orange-500">Talevy</a>
   <nav>
     <ul class="flex items-center gap-4">
-      @auth
-        <a href="{{ route('profile.index') }}" @class([
-            'font-medium',
-            'text-orange-500' => request()->routeIs('profile.index'),
-        ])>Profile</a>
-      @endauth
       <li>
         <a href={{ route('stories.create') }} @class([
             'font-medium',
