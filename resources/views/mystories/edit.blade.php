@@ -62,14 +62,12 @@
           @enderror
         </div>
         <div class="flex gap-2">
-          <a href="{{ route('profile.my-stories.index') }}"
+          <a href="{{ route('mystories.index') }}"
             class="h-10 bg-gray-500 hover:bg-gray-600 transition-colors p-2 px-3 rounded-xs text-white font-medium shadow-sm">Cancel</a>
 
-          <a href="{{ route('profile.my-stories.index') }}"
+          <button
             class="h-10 bg-orange-500 hover:bg-orange-600
-            transition-colors p-2 px-3 rounded-xs text-white font-medium shadow-sm">Update</a>
-          <a
-            class="h-10 bg-red-500 hover:bg-red-600 transition-colors p-2 px-3 rounded-xs text-white font-medium shadow-sm">Delete</a>
+            transition-colors p-2 px-3 rounded-xs text-white font-medium shadow-sm">Update</button>
         </div>
       </form>
     </div>
