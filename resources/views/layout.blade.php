@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <div class="max-w-[1440px] mx-auto flex flex-col h-svh">
+  <div class="max-w-[1440px] mx-auto flex flex-col min-h-svh">
     <x-header />
 
     @if (session('error'))
