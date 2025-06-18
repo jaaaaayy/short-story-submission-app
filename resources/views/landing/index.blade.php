@@ -4,7 +4,7 @@
 
 @section('content')
 
-  <div class="p-4 md:px-12 lg:p-6 lg:px-18 grow">
+  <div class="p-4 md:px-12 lg:p-6 lg:px-18 grow flex items-center justify-center">
     <div class="grid md:grid-cols-2 gap-4 h-full">
       <section class="flex flex-col items-start justify-center">
         <h1 class="text-5xl font-bold mb-4 text-orange-500">Unleash Stories Worth Sharing</h1>

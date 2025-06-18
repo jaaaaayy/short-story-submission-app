@@ -5,9 +5,9 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\StoryController;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware('guest')->group(function () {
-  Route::get('/', [LandingController::class, 'index'])->name('landing.index');
+Route::get('/', [LandingController::class, 'index'])->name('landing.index');
 
+Route::middleware('guest')->group(function () {
   Route::controller(AuthController::class)->group(function () {
     Route::get('/login', 'index')->name('auth.index');
     Route::post('/login', 'login')->name('auth.login');
