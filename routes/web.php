@@ -31,5 +31,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', 'index')->name('profile.index');
     Route::get('/profile/my-stories', 'myStories')->name('profile.my-stories.index');
     Route::get('/profile/my-stories/{story}/edit', 'editStory')->name('profile.my-stories.edit');
+    Route::put('/profile/my-stories/{story}', 'updateStory')->name('profile.my-stories.update');
   });
 });
