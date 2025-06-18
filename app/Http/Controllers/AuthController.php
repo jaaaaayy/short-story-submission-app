@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -50,11 +51,14 @@ class AuthController extends Controller
             'password' => 'required|string|min:8|confirmed'
         ]);
 
+        $userRoleId = Role::where('name', 'user')->value('id');
+
         try {
             User::create([
                 'username' => $validated['username'],
                 'email' => $validated['email'],
                 'password' => Hash::make($validated['password']),
+                'role_id' => $userRoleId
             ]);
 
             return redirect()->route('auth.index')->with('success', 'Registered successfully.');
