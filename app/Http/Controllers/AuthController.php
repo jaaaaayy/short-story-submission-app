@@ -20,6 +20,7 @@ class AuthController extends Controller
         $validated = $request->validate([
             'username' => 'required|string|min:3|max:8',
             'password' => 'required|string|min:8',
+            'remember' => 'boolean',
         ]);
 
         try {
@@ -29,7 +30,7 @@ class AuthController extends Controller
                 return back()->with('error', 'Incorrect username or password.');
             }
 
-            Auth::login($user, true);
+            Auth::login($user, $validated['remember'] ?? false);
 
             return redirect()->route('stories.index')->with('success', 'Logged in successfully.');
         } catch (Throwable $caught) {
