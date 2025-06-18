@@ -14,11 +14,18 @@ class ProfileController extends Controller
         return view('profile.index', ['user' => $user]);
     }
 
-    public function myStoryList()
+    public function myStories()
     {
         $user = Auth::user();
         $stories = Story::select('id', 'cover_image')->where('author_id', $user->id)->latest()->get();
 
-        return view('profile.my-story-list', ['user' => $user, 'stories' => $stories]);
+        return view('profile.my-stories.index', ['user' => $user, 'stories' => $stories]);
+    }
+
+    public function editStory(string $id)
+    {
+        $story = Story::where('id', $id)->first();
+
+        return view('profile.my-stories.edit', ['story', $story]);
     }
 }
