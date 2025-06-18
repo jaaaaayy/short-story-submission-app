@@ -23,8 +23,14 @@
           <div class="flex gap-2">
             <a href="{{ route('mystories.edit', $story->id) }}"
               class="h-10 bg-orange-500 hover:bg-orange-600 transition-colors p-2 px-3 rounded-xs text-white font-medium shadow-sm">Edit</a>
-            <a href=""
-              class="h-10 bg-red-500 hover:bg-red-600 transition-colors p-2 px-3 rounded-xs text-white font-medium shadow-sm">Delete</a>
+            <form action="{{ route('mystories.destroy', $story->id) }}" method="POST"
+              onsubmit="return confirm('Are you sure you want to delete this story?')">
+              @csrf
+              @method('DELETE')
+
+              <button
+                class="h-10 bg-red-500 hover:bg-red-600 transition-colors p-2 px-3 rounded-xs text-white font-medium shadow-sm">Delete</button>
+            </form>
           </div>
         </div>
         <p>{!! nl2br(e($story->content)) !!}</p>
