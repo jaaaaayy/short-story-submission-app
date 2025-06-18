@@ -51,10 +51,8 @@ class StoryController extends Controller
         }
     }
 
-    public function show(String $id)
+    public function show(Story $story)
     {
-        $story = Story::where('id', $id)->first();
-
         return view('stories.show', ['story' => $story]);
     }
 }
