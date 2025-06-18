@@ -62,7 +62,7 @@
           @enderror
         </div>
         <div class="flex gap-2">
-          <a href="{{ route('mystories.index') }}"
+          <a href="{{ route('mystories.show', $story->id) }}"
             class="h-10 bg-gray-500 hover:bg-gray-600 transition-colors p-2 px-3 rounded-xs text-white font-medium shadow-sm">Cancel</a>
 
           <button

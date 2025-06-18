@@ -58,4 +58,9 @@ class MyStoryController extends Controller
             return redirect()->route('mystories.edit')->with('error', 'Failed to update story. Please try again.');
         }
     }
+
+    public function show(Story $story)
+    {
+        return view('mystories.show', ['story' => $story]);
+    }
 }
