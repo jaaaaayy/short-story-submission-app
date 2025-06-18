@@ -32,14 +32,18 @@ class MyStoryController extends Controller
             'title' => 'required|string',
             'content' => 'required|string',
             'genre_id' => 'required|integer|exists:genres,id',
-            'cover_image' => 'required|file|mimes:jpg,jpeg,png'
+            'cover_image' => 'nullable|file|mimes:jpg,jpeg,png'
         ]);
 
         try {
-            Storage::disk('public')->delete($story->cover_image);
+            if ($request->hasFile('cover_image')) {
+                Storage::disk('public')->delete($story->cover_image);
 
-            $imagePath = $request->file('cover_image')->store('stories', 'public');
-            $validated['cover_image'] = $imagePath;
+                $imagePath = $request->file('cover_image')->store('stories', 'public');
+                $validated['cover_image'] = $imagePath;
+            } else {
+                $validated['cover_image'] = $story->cover_image;
+            }
 
             $story->update([
                 'title' => $validated['title'],
