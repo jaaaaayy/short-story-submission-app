@@ -36,5 +36,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/mystories', 'index')->name('mystories.index');
     Route::get('/mystories/{story}/edit', 'edit')->name('mystories.edit');
     Route::put('/mystories/{story}', 'update')->name('mystories.update');
+    Route::get('/mystories/{story}', 'show')->name('mystories.show');
   });
 });
