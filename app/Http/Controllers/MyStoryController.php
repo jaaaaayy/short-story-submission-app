@@ -63,4 +63,11 @@ class MyStoryController extends Controller
     {
         return view('mystories.show', ['story' => $story]);
     }
+
+    public function destroy(Story $story)
+    {
+        $story->delete();
+
+        return redirect()->route('mystories.index')->with('success', 'Story deleted successfully.');
+    }
 }
