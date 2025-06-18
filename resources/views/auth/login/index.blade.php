@@ -5,7 +5,7 @@
 @section('content')
   <div class="p-4 lg:p-6 grow flex items-center justify-center">
     <form action="{{ route('auth.login') }}" method="POST"
-      class="grid gap-4 border border-gray-200 rounded-xs p-6 w-[400px]">
+      class="grid gap-4 border border-gray-200 rounded-xs p-4 lg:p-6 w-[400px]">
       @csrf
 
       <h1 class="text-xl font-semibold text-center">Welcome back!</h1>

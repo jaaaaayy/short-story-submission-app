@@ -21,7 +21,7 @@
             Writing</a>
         </div>
       </section>
-      <section class="flex items-center justify-center">
+      <section class="md:flex items-center justify-center hidden">
         <img src="{{ Storage::url('landing/Story List.png') }}" alt="Story List">
       </section>
     </div>
