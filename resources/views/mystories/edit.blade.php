@@ -7,7 +7,8 @@
   <div class="flex grow">
     <x-sidebar />
     <div class="p-4 lg:p-6 w-full">
-      <form action="{{ route('profile.my-stories.update') }}" method="POST" enctype="multipart/form-data" class=" space-y-4">
+      <form action="{{ route('mystories.update', $story->id) }}" method="POST" enctype="multipart/form-data"
+        class=" space-y-4">
         @csrf
         @method('PUT')
 
@@ -50,8 +51,8 @@
             class="h-10 border border-gray-200 p-2 px-3 rounded-xs focus:outline-none focus:border-orange-500 focus:ring-orange-500/50 focus:ring-[3px]">
             <option value="" disabled selected>Select a genre</option>
             @foreach ($genres as $genre)
-              <option value="{{ $story->genre->id }}"
-                {{ (old('genre_id') ? (old('genre_id') == $story->genre->id ? 'selected' : '') : $story->genre->id === $genre->id) ? 'selected' : '' }}>
+              <option value="{{ $genre->id }}"
+                {{ (old('genre_id') ? (old('genre_id') == $genre->id ? 'selected' : '') : $story->genre->id === $genre->id) ? 'selected' : '' }}>
                 {{ $genre->name }}
               </option>
             @endforeach

@@ -7,9 +7,9 @@
       ])>Profile</a>
     </li>
     <li>
-      <a href="{{ route('profile.my-stories.index') }}" @class([
+      <a href="{{ route('mystories.index') }}" @class([
           'font-medium',
-          'text-orange-500' => request()->routeIs('profile.my-stories.index'),
+          'text-orange-500' => request()->routeIs('mystories.index'),
       ])>My Stories</a>
     </li>
   </ul>
