@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\MyStoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StoryController;
 use Illuminate\Support\Facades\Route;
@@ -24,13 +25,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/stories', 'index')->name('stories.index');
     Route::get('/stories/write', 'create')->name('stories.create');
     Route::post('/stories', 'store')->name('stories.store');
-    Route::get('/stories/{id}', 'show')->name('stories.show');
+    Route::get('/stories/{story}', 'show')->name('stories.show');
   });
 
   Route::controller(ProfileController::class)->group(function () {
     Route::get('/profile', 'index')->name('profile.index');
-    Route::get('/profile/my-stories', 'myStories')->name('profile.my-stories.index');
-    Route::get('/profile/my-stories/{story}/edit', 'editStory')->name('profile.my-stories.edit');
-    Route::put('/profile/my-stories/{story}', 'updateStory')->name('profile.my-stories.update');
+  });
+
+  Route::controller(MyStoryController::class)->group(function () {
+    Route::get('/mystories', 'index')->name('mystories.index');
+    Route::get('/mystories/{story}/edit', 'edit')->name('mystories.edit');
+    Route::put('/mystories/{story}', 'update')->name('mystories.update');
   });
 });
