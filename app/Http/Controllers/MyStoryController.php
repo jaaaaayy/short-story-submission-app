@@ -14,7 +14,7 @@ class MyStoryController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $stories = Story::select('id', 'cover_image')->where('author_id', $user->id)->latest()->get();
+        $stories = Story::select('id', 'cover_image')->where('author_id', $user->id)->whereNull('deleted_at')->latest()->get();
 
         return view('mystories.index', ['user' => $user, 'stories' => $stories]);
     }
