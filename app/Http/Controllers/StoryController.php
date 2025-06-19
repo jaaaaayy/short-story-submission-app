@@ -12,7 +12,7 @@ class StoryController extends Controller
 {
     public function index()
     {
-        $stories = Story::select('id', 'cover_image')->latest()->get();
+        $stories = Story::select('id', 'cover_image')->whereNull('deleted_at')->latest()->get();
 
         return view('stories.index', ['stories' => $stories]);
     }
