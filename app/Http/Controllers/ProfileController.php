@@ -28,7 +28,7 @@ class ProfileController extends Controller
 
             return redirect()->route('profile.index')->with('success', 'Profile updated successfully.');
         } catch (Throwable $caught) {
-            return redirect()->route('profile.index')->with('error', 'Failed to update profile information. Please try again.');
+            return redirect()->route('profile.index')->with('error', 'Failed to update profile. Please try again.');
         }
     }
 }

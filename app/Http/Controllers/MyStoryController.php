@@ -66,8 +66,12 @@ class MyStoryController extends Controller
 
     public function destroy(Story $story)
     {
-        $story->delete();
+        try {
+            $story->delete();
 
-        return redirect()->route('mystories.index')->with('success', 'Story deleted successfully.');
+            return redirect()->route('mystories.index')->with('success', 'Story deleted successfully.');
+        } catch (Throwable $caught) {
+            return redirect()->route('mystories.index')->with('error', 'Failed to delete story. Please try again.');
+        }
     }
 }
