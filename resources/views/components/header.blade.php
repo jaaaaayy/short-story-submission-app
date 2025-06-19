@@ -31,7 +31,11 @@
         </li>
       @endguest
       @auth
-        <a href="{{ route('auth.logout') }}" class="font-medium">Logout</a>
+        <form action="{{ route('auth.logout') }}" method="POST">
+          @csrf
+
+          <button class="font-medium">Logout</button>
+        </form>
       @endauth
     </ul>
   </nav>
