@@ -29,7 +29,7 @@
         </div>
         <div class="grid gap-2">
           <label for="title" class="font-medium">Title</label>
-          <input type="text" id="title" name="title" value="{{ $story->title }}"
+          <input type="text" id="title" name="title" value="{{ old('title', $story->title) }}"
             class="h-10 border border-gray-200 p-2 px-3 rounded-xs focus:outline-none focus:border-orange-500 focus:ring-orange-500/50 focus:ring-[3px]"
             placeholder="Enter the title" autocomplete="off">
           @error('title')
@@ -40,7 +40,7 @@
           <label for="content" class="font-medium">Content</label>
           <textarea rows="20" id="content" name="content"
             class="border border-gray-200 p-2 px-3 rounded-xs focus:outline-none focus:border-orange-500 focus:ring-orange-500/50 focus:ring-[3px]"
-            placeholder="Enter the content" autocomplete="off">{{ $story->content }}</textarea>
+            placeholder="Enter the content" autocomplete="off">{{ old('content', $story->content) }}</textarea>
           @error('content')
             <p class="text-red-500">{{ $message }}</p>
           @enderror
@@ -51,8 +51,7 @@
             class="h-10 border border-gray-200 p-2 px-3 rounded-xs focus:outline-none focus:border-orange-500 focus:ring-orange-500/50 focus:ring-[3px]">
             <option value="" disabled selected>Select a genre</option>
             @foreach ($genres as $genre)
-              <option value="{{ $genre->id }}"
-                {{ (old('genre_id') ? (old('genre_id') == $genre->id ? 'selected' : '') : $story->genre->id === $genre->id) ? 'selected' : '' }}>
+              <option value="{{ $genre->id }}" {{ old('genre_id', $story->genre_id) == $genre->id ? 'selected' : '' }}>
                 {{ $genre->name }}
               </option>
             @endforeach
