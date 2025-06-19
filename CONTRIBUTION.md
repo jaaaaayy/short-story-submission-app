@@ -76,10 +76,10 @@ git push origin <your-branch-name>
 ### 5. Open a Pull Request
 
 -   Go to the repo on GitHub
--   Click "Compare & Pull Request"
--   Add descriptive title and details
--   Set base branch to main
--   Click "Create Pull Request"
+-   Click "Pull requests"
+-   Click "New pull request"
+-   In the Compare changes section, set the base branch to main and the compare branch to your branch
+-   Click "Create pull request"
 
 ### 6. Review & Merge
 
