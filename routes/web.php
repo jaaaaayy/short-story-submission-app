@@ -30,6 +30,7 @@ Route::middleware('auth')->group(function () {
 
   Route::controller(ProfileController::class)->group(function () {
     Route::get('/profile', 'index')->name('profile.index');
+    Route::patch('/profile/{user}', 'update')->name('profile.update');
   });
 
   Route::controller(MyStoryController::class)->group(function () {
