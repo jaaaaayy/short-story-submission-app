@@ -34,7 +34,7 @@ class StoryController extends Controller
         ]);
 
         try {
-            $imagePath = $request->file('cover_image')->store('stories', 'public');
+            $imagePath = $request->file('cover_image')->store('stories', 's3');
             $validated['cover_image'] = $imagePath;
 
             Story::create([

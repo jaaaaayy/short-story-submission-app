@@ -37,9 +37,9 @@ class MyStoryController extends Controller
 
         try {
             if ($request->hasFile('cover_image')) {
-                Storage::disk('public')->delete($story->cover_image);
+                Storage::disk('s3')->delete($story->cover_image);
 
-                $imagePath = $request->file('cover_image')->store('stories', 'public');
+                $imagePath = $request->file('cover_image')->store('stories', 's3');
                 $validated['cover_image'] = $imagePath;
             } else {
                 $validated['cover_image'] = $story->cover_image;

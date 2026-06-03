@@ -11,7 +11,7 @@
         <div class="flex justify-between">
           <div class="flex items-center gap-4">
             <div class="rounded-xs overflow-hidden aspect-[16/25] h-[250px]">
-              <img src="{{ Storage::url($story->cover_image) }}" alt="{{ $story->title }}"
+              <img src="{{ Storage::disk('s3')->url($story->cover_image) }}" alt="{{ $story->title }}"
                 class="w-full h-full object-cover">
             </div>
             <div class="text-start space-y-1">

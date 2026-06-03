@@ -20,7 +20,7 @@
           <div
             class="w-60 sm:w-64 aspect-[1/1.5] border border-gray-200 cursor-pointer rounded-xs overflow-hidden relative"
             onclick="document.getElementById('cover_image').click()">
-            <img src="{{ Storage::url($story->cover_image) }}" alt="{{ $story->title }}" id="preview"
+            <img src="{{ Storage::disk('s3')->url($story->cover_image) }}" alt="{{ $story->title }}" id="preview"
               class="w-full h-full object-cover" />
           </div>
           @error('cover_image')
